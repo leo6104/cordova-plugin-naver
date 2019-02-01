@@ -1,0 +1,3 @@
+dependencies {
+    implementation fileTree(dir: 'src/main/libs', include: '*.aar') // 추가
+}
