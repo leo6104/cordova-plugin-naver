@@ -44,15 +44,15 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <config-file parent="application" target="app/src/main/AndroidManifest.xml">
+        <!-- <config-file parent="application" target="app/src/main/AndroidManifest.xml"> -->
 
             <!-- 네이버 아이디로 로그인에서 사용하는 액티비티를 등록 -->
-            <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
+<!--             <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
                       android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
             <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
-                      android:label="Naver OAuth2.0"/>
-        </config-file>
+                      android:label="Naver OAuth2.0"/> -->
+        <!-- </config-file> -->
 
         <!-- cordova plugin src files -->
         <source-file src="src/android/io/ghyeok/cordova/naver/NaverPlugin.java"
