@@ -59,7 +59,7 @@
                      target-dir="app/src/main/java/io/ghyeok/cordova/naver"/>
 
         <!-- 네이버 라이브러리 JAR -->
-        <source-file src="src/android/libs/naveridlogin_android_sdk_4.2.0.aar" target-dir="app/libs"/>
+        <source-file src="src/android/libs/naveridlogin_android_sdk_4.2.5.aar" target-dir="app/libs"/>
 
         <framework src="src/android/naver-build.gradle" custom="true" type="gradleReference" />
     </platform>
