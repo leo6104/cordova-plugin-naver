@@ -6,7 +6,7 @@ repositories{
 } 
 
 dependencies { 
-    compile(name:'naveridlogin_android_sdk_4.2.0', ext:'aar') 
+    compile(name:'naveridlogin_android_sdk_4.2.5', ext:'aar') 
 } 
 
 android { 
