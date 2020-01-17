@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
-#import "NaverThirdPartyLoginConnection.h"
-#import "NLoginThirdPartyOAuth20InAppBrowserViewController.h"
+#import <NaverThirdPartyLogin/NaverThirdPartyLogin.h>
+#import <NaverThirdPartyLogin/NaverThirdPartyLoginConnection.h>
 
 @interface NaverPlugin : CDVPlugin <NaverThirdPartyLoginConnectionDelegate> {
 }

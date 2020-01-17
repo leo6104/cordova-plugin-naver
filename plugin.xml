@@ -134,12 +134,14 @@
         </config-file>
 
         <!-- Naver Framework -->
-        <header-file src="src/ios/libs/NaverThirdPartyConstantsForApp.h"/>
-        <header-file src="src/ios/libs/NaverThirdPartyLoginConnection.h"/>
-        <header-file src="src/ios/libs/NLoginThirdPartyOAuth20InAppBrowserViewController.h"/>
-        <source-file src="src/ios/libs/NLoginThirdPartyOAuth20InAppBrowserViewController.m"/>
-        <source-file src="src/ios/libs/libNaverLogin.a" framework="true"/>
-        <resource-file src="src/ios/libs/NaverAuth.bundle"/>
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="naveridlogin-sdk-ios" spec="4.1.1"/>
+            </pods>
+        </podspec>
 
         <!-- 소스  -->
         <header-file src="src/ios/NaverPlugin.h"/>

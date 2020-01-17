@@ -25,11 +25,12 @@
     NSString *consumerKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NaverClientID"];
     NSString *consumerSecret = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NaverClientSecret"];
     NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NaverClientName"];
-
-    [[NaverThirdPartyLoginConnection getSharedInstance] setServiceUrlScheme:serviceUrlScheme];
-    [[NaverThirdPartyLoginConnection getSharedInstance] setConsumerKey:consumerKey];
-    [[NaverThirdPartyLoginConnection getSharedInstance] setConsumerSecret:consumerSecret];
-    [[NaverThirdPartyLoginConnection getSharedInstance] setAppName:appName];
+    NSLog(@"%@",consumerKey);
+    NaverThirdPartyLoginConnection *thirdConn = [NaverThirdPartyLoginConnection getSharedInstance];
+    [thirdConn setServiceUrlScheme:serviceUrlScheme];
+    [thirdConn setConsumerKey:consumerKey];
+    [thirdConn setConsumerSecret:consumerSecret];
+    [thirdConn setAppName:appName];
 
 }
 
@@ -46,8 +47,9 @@
     self.loginCallbackId = command.callbackId;
 
     // 로그인 요청
-    NaverThirdPartyLoginConnection *login = [NaverThirdPartyLoginConnection getSharedInstance];
-    [login requestThirdPartyLogin];
+    NaverThirdPartyLoginConnection *tlogin = [NaverThirdPartyLoginConnection getSharedInstance];
+    tlogin.delegate = self;
+    [tlogin requestThirdPartyLogin];
 }
 
 /**
@@ -143,9 +145,9 @@
 #pragma mark - Utility methods
 
 - (void)presentWebviewControllerWithRequest:(NSURLRequest *)urlRequest {
-    NLoginThirdPartyOAuth20InAppBrowserViewController *inAppBrowserViewController = [[NLoginThirdPartyOAuth20InAppBrowserViewController alloc] initWithRequest:urlRequest];
-    inAppBrowserViewController.parentOrientation = (UIInterfaceOrientation) [[UIDevice currentDevice] orientation];
-    [[self viewController] presentViewController:inAppBrowserViewController animated:NO completion:nil];
+//    NLoginThirdPartyOAuth20InAppBrowserViewController *inAppBrowserViewController = [[NLoginThirdPartyOAuth20InAppBrowserViewController alloc] initWithRequest:urlRequest];
+//    inAppBrowserViewController.parentOrientation = (UIInterfaceOrientation) [[UIDevice currentDevice] orientation];
+//    [[self viewController] presentViewController:inAppBrowserViewController animated:NO completion:nil];
 }
 
 - (void)exchangeKey:(NSString *)aKey withKey:(NSString *)aNewKey inMutableDictionary:(NSMutableDictionary *)aDict {
